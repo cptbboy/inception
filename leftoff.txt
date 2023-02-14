@@ -1,0 +1,30 @@
+I just cannot get mariadb to get running. When I execute all the steps I have in my 
+Dockerfile inside the container everything works just fine but as soon as I let the
+docker-compose do its work it does not work for some reason.
+
+It either complains about the socket file it cannot find or mysql gets furious with my syntax
+altough it's all fine when I do the exact same inside the container.
+
+Either my configuration just is not right or I don't get my Dockerfile right. I really dont know
+what to do.
+Having mysql running before the CMD for configuring the inside of the database really gets on my
+nerves, I have to find work arounds that are just messy and utter bulshit. Is there really no
+other solution? 
+--------------------------------------------------------------------------------------------------
+Watch this for a better understanding of php-fpm&nginx https://www.youtube.com/watch?v=VtKTOZFfoug
+--------------------------------------------------------------------------------------------------
+Getting a 404 File not found (index.php)
+Trying to set up wordpress with php-fpm atm
+No clue what it could be. Paths seem all to be fine. index.php seems fine.
+
+Although I have some doubt about index.php,
+maybe creating my own index.php or index.html could tell me more
+
+Also the inception.conf for nginx might be off
+according to this https://serverfault.com/questions/904716/404-not-found-with-nginx-and-php
+	# this path MUST be exactly as docker-compose.fpm.volumes,
+    	# even if it doesn't exists in this dock.
+    	root /var/wwww/html;
+maybe that's why it cannot find the wordpress files
+
+Maybe the nginx-error.log file inside the nginx container may give some insight
