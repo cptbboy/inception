@@ -1,3 +1,8 @@
+Cannot access the website through the intended domain, only localhost
+Need a solution to fix that
+--------------------------------------------------------------------------------------------------
+Need to configure and core install wordpress
+--------------------------------------------------------------------------------------------------
 I just cannot get mariadb to get running. When I execute all the steps I have in my 
 Dockerfile inside the container everything works just fine but as soon as I let the
 docker-compose do its work it does not work for some reason.

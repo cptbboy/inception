@@ -22,9 +22,12 @@ php8-gettext \
 php8-ldap \
 php8-ctype \
 php8-dom \
-php8-simplexml				
-COPY ./tools/entrypoint.sh /tmp/entrypoint.sh
-RUN chmod +x /tmp/entrypoint.sh
-ENTRYPOINT ["/tmp/entrypoint.sh"]
+curl \
+php8-phar \
+php8-simplexml > /dev/null
 COPY ./conf/wp-config.php /var/www/html/wordpress/wp-config.php
+EXPOSE 9000
+COPY ./tools/entrypoint.sh /bin/entrypoint
+RUN chmod +x /bin/entrypoint
+ENTRYPOINT ["entrypoint"]
 CMD ["/usr/sbin/php-fpm8"]
