@@ -43,6 +43,9 @@ status:
 	@echo ""
 	@echo "${YELLOW}[docker images]${RESET}"
 	@sudo docker images
+	@echo ""
+	@echo "${YELLOW}[docker-compose logs]${RESET}"
+	@sudo docker-compose -f ./srcs/docker-compose.yml logs
 
 prune:	down
 	@echo "${YELLOW}[rmdir data]${RESET}"
