@@ -28,11 +28,8 @@ services:
       - inception
     volumes:
       - mariadb:/var/lib/mysql
-    environment:
-      - MARIADB_NAME=${MARIADB_NAME}
-      - MARIADB_USER=${MARIADB_USER}
-      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
-      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+    env_file:
+      - .env
     restart: "on-failure"
   wordpress:
     container_name: wordpress
