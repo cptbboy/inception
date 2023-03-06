@@ -9,13 +9,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: "/home/cptboy/data/wordpress"
+      device: "/home/rsiebert/data/wordpress"
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: "/home/cptboy/data/mariadb"
+      device: "/home/rsiebert/data/mariadb"
 
 services:
   mariadb:
@@ -28,11 +28,8 @@ services:
       - inception
     volumes:
       - mariadb:/var/lib/mysql
-    environment:
-      - MARIADB_NAME=${MARIADB_NAME}
-      - MARIADB_USER=${MARIADB_USER}
-      - MARIADB_PASSWORD=${MARIADB_PASSWORD}
-      - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+    env_file:
+      - .env
     restart: "on-failure"
   wordpress:
     container_name: wordpress
