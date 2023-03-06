@@ -9,13 +9,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: "/home/rsiebert/data/wordpress"
+      device: "/home/cptboy/data/wordpress"
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: "/home/rsiebert/data/mariadb"
+      device: "/home/cptboy/data/mariadb"
 
 services:
   mariadb:
